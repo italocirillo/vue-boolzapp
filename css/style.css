@@ -10,7 +10,6 @@ body{
 img{
     max-width: 100%;
 }
-
 /* WRAPPER */
 .wrapper{
     background-image: linear-gradient(to bottom, #029688 20%, #d9dbd6 0%);
@@ -32,19 +31,6 @@ h2{
     font-size: 1rem;
     font-weight: 400;
 }
-.banner-notifiche h2{
-    font-size: 1rem;
-    font-weight: 400;
-}
-.link-notifiche{
-    color: dimgray;
-    font-size: 0.8rem;
-}
-.scritte-informative{
-    color: #a7a6a4;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
 
 /* FINESTRA APP */
 .finestra-app{
@@ -56,7 +42,7 @@ h2{
 }
 
 /* LISTA MESSAGGI */
-.lista-messaggi{
+.sezione-lista-messaggi{
     width: 40%;
     height: 100%;
     /* debug */
@@ -86,6 +72,19 @@ h2{
     padding: 1em;
     gap: 1em;
 }
+.banner-notifiche h2{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.link-notifiche{
+    color: dimgray;
+    font-size: 0.8rem;
+}
+.scritte-informative{
+    color: #a7a6a4;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
 .campanella{
     color: #8edafc;
     background-color: white;
@@ -97,6 +96,62 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* Barra Ricerca */
+.barra-di-ricerca{
+    background-color: #fafafa;
+    padding: 0.3em;
+    display: flex;
+    align-items: center;
+}
+#ricerca-messaggi{
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid gainsboro;
+    background-color: #fafafa;
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    outline: none;
+}
+.icona-ricerca{
+    color: rgb(177, 176, 176);
+    padding: 0.3em;
+    border: 1px solid gainsboro;
+    background-color: #fafafa;
+    border-radius: 5px 0px 0px 5px;
+    border-right: none;
+    cursor: pointer;
+}
+/*Lista chat*/
+.lista-chat{
+    list-style: none;
+}
+.chat{
+    display: flex;
+    background-color: #fafafa;
+    padding: 0.5em 0em;
+    border-top: 0.5px solid gainsboro;
+}
+.foto-chat{
+    width: 15%;
+    border-radius: 50%;
+    margin: 0.2em 1em;
+}
+.orario-chat{
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: lightgray;
+    flex-grow: 1;
+    text-align: end;
+    padding: 0em 1em;
+}
+.stato-chat{
+    color: rgb(152, 149, 149);
+    font-size: 0.8rem;
+    padding: 0.3em 0em;
+}
+.chat h2{
+    font-size: 1rem;
 }
 /* Chat box */
 .chat-box{
