@@ -10,6 +10,9 @@ body{
 img{
     max-width: 100%;
 }
+i{
+    cursor: pointer;
+}
 /* WRAPPER */
 .wrapper{
     background-image: linear-gradient(to bottom, #029688 20%, #d9dbd6 0%);
@@ -157,12 +160,40 @@ h2{
 .chat h2{
     font-size: 1rem;
 }
-/* Chat box */
+/* CHAT BOX */
 .chat-box{
     width: 60%;
     height: 100%;
     background-image: url(../img/mine.jpg);
+    display: flex;
+    flex-direction: column;
 }
 .chat-box .header-section{
     border-left: 1px solid #b1b1b1;
+}
+/* Main invia messaggio */
+.storico-chat{
+    flex-grow: 1;
+}
+/* Footer invia messaggio */
+.invia-messaggio{
+    background-color: #f3eee9;
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.invia-messaggio i{
+    color: gray;
+}
+.sezione-messaggio-da-inviare{
+    flex-grow: 1;
+}
+#messaggio-da-inviare{
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.8em;
+    border: 1px solid gainsboro;
+    background-color: #fafafa;
+    outline: none;
 }
