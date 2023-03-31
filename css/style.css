@@ -4,48 +4,106 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Roboto', sans-serif;
+}
 img{
     max-width: 100%;
 }
+
 /* WRAPPER */
 .wrapper{
     background-image: linear-gradient(to bottom, #029688 20%, #d9dbd6 0%);
     width: 100%;
+    min-width: 800px;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: auto;
 }
+
+/* TIPOGRAFIA */
+h1{
+    font-size: 1rem;
+    font-weight: 400;
+}
+h2{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.banner-notifiche h2{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.link-notifiche{
+    color: dimgray;
+    font-size: 0.8rem;
+}
+.scritte-informative{
+    color: #a7a6a4;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
 /* FINESTRA APP */
 .finestra-app{
     width: 80%;
     height: 90%;
     min-width: 800px;
-    min-height: 500px;
-    overflow: auto;
+    min-height: 200px;
     display: flex;
 }
-/* Lista messaggi */
+
+/* LISTA MESSAGGI */
 .lista-messaggi{
     width: 40%;
     height: 100%;
     /* debug */
     background-color: cadetblue;
 }
-.header-lista-messaggi{
+.header-section{
     background-color:  #eaeaea;
     padding: 0.5em 1em;
     display: flex;
     align-items: center;
 }
 .immagine-profilo{
-    width: 15%;
+    max-width: 40px;
     border-radius: 50%;
+}
+.icone-header{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    gap: 1em;
+    color: #b1b1b1;
+}
+/* Banner notifiche */
+.banner-notifiche{
+    background-color: #8edafc;
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+}
+.campanella{
+    color: #8edafc;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* Chat box */
 .chat-box{
     width: 60%;
     height: 100%;
     background-image: url(../img/mine.jpg);
+}
+.chat-box .header-section{
+    border-left: 1px solid #b1b1b1;
 }
