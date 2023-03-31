@@ -19,7 +19,6 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
 }
 
 /* TIPOGRAFIA */
@@ -45,8 +44,9 @@ h2{
 .sezione-lista-messaggi{
     width: 40%;
     height: 100%;
-    /* debug */
     background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
 }
 .header-section{
     background-color:  #eaeaea;
@@ -123,8 +123,12 @@ h2{
     cursor: pointer;
 }
 /*Lista chat*/
-.lista-chat{
+.lista-chat ul{
     list-style: none;
+}
+.lista-chat{
+    overflow-y: auto;
+    max-height: 80%;
 }
 .chat{
     display: flex;
