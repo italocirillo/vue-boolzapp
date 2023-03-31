@@ -87,9 +87,13 @@
                     </header>
                     <!-- STORICO DELLE CHAT -->
                     <main class="storico-chat">
-                        <div>
-                            <h6 class="messaggi-inviati"></h6>
+                        <div v-for="(messaggio,index) in contatti[0].messages" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto' ">
+                            <h6 class="messaggi messaggi-inviati">{{ messaggio.message }}</h6>
+                            <span class="orario-messaggio">
+                                15:30
+                            </span>
                         </div>
+                        
                     </main>
                     <!-- FINE STORICO DELLE CHAT -->
                     <!-- Sezione per inviare i messaggi -->

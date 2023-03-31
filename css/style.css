@@ -68,6 +68,7 @@ h2{
     gap: 1em;
     color: #b1b1b1;
 }
+
 /* Banner notifiche */
 .banner-notifiche{
     background-color: #8edafc;
@@ -100,6 +101,7 @@ h2{
     justify-content: center;
     align-items: center;
 }
+
 /* Barra Ricerca */
 .barra-di-ricerca{
     background-color: #fafafa;
@@ -125,6 +127,7 @@ h2{
     border-right: none;
     cursor: pointer;
 }
+
 /*Lista chat*/
 .lista-chat ul{
     list-style: none;
@@ -160,6 +163,7 @@ h2{
 .chat h2{
     font-size: 1rem;
 }
+
 /* CHAT BOX */
 .chat-box{
     width: 60%;
@@ -171,9 +175,45 @@ h2{
 .chat-box .header-section{
     border-left: 1px solid #b1b1b1;
 }
+
 /* Main invia messaggio */
 .storico-chat{
     flex-grow: 1;
+    padding: 2em 2em 0em 2em;
+    overflow-y: auto;
+}
+div:has(>.messaggi){
+    padding: 0.5em 0em;
+}
+.messaggi{
+    color: rgb(81, 81, 81);
+    font-size: 0.8rem;
+    font-weight: 500;
+    max-width: 80%;
+    display: inline-block;
+    padding: 1.6em 10em 2em 1.6em;
+    border-radius: 15px;
+}
+.inviato{
+    text-align: end;
+}
+.ricevuto{
+    text-align: start;
+}
+.inviato h6{
+    background-color: #d5f9ba;
+    position: relative;
+}
+.ricevuto h6{
+    background-color: white;
+    position: relative;
+}
+.orario-messaggio{
+    position: relative;
+    top: 20px;
+    right: 40px;
+    font-size: 0.5rem;
+    color: #a7a6a4;
 }
 /* Footer invia messaggio */
 .invia-messaggio{
