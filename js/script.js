@@ -165,8 +165,8 @@ createApp({
                     }
                 ],
             }
-        ]
-        
+        ],
+        contattoSelezionato : 0,
     }
   }
 }).mount('#app')

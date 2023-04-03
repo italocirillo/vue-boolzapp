@@ -56,7 +56,7 @@
                     <!-- Lista chat -->
                     <div class="lista-chat">
                         <ul v-for="(contatto,index) in contatti">
-                            <li class="chat">
+                            <li class="chat" :class="index === contattoSelezionato ? 'chat-selezionata' : '' " @click="contattoSelezionato=index">
                                 <img class="foto-chat" :src="'img/avatar'+contatto.avatar+'.jpg'" :alt="contatto.avatar">
                                 <div>
                                     <h2>{{ contatto.name }}</h2>
@@ -74,9 +74,9 @@
                 <!-- CHAT BOX -->
                 <section class="chat-box">
                     <header class="header-section">
-                        <img class="immagine-profilo" src="img/avatar_1.jpg" alt="foto-profilo-Michele">
+                        <img class="immagine-profilo" :src="`img/avatar${contatti[contattoSelezionato].avatar}.jpg`" alt="foto-profilo-Michele">
                         <div>
-                            <h2>Michele</h2>
+                            <h2>{{ contatti[contattoSelezionato].name}}</h2>
                             <p class="scritte-informative">Ultimo accesso oggi alle 12:00</p>
                         </div>
                         <div class="icone-header">
@@ -87,15 +87,15 @@
                     </header>
                     <!-- STORICO DELLE CHAT -->
                     <main class="storico-chat">
-                        <div v-for="(messaggio,index) in contatti[0].messages" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto' ">
+                        <div v-for="(messaggio,index) in contatti[contattoSelezionato].messages" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto' ">
                             <h6 class="messaggi messaggi-inviati">{{ messaggio.message }}</h6>
                             <span class="orario-messaggio">
                                 15:30
                             </span>
                         </div>
-                        
                     </main>
                     <!-- FINE STORICO DELLE CHAT -->
+
                     <!-- Sezione per inviare i messaggi -->
                     <footer class="invia-messaggio">
                         <i class="fa-regular fa-face-smile"></i>

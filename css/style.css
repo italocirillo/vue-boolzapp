@@ -167,6 +167,7 @@ h2 {
     background-color: #fafafa;
     padding: 0.5em 0em;
     border-top: 0.5px solid gainsboro;
+    cursor: pointer;
 }
 
 .foto-chat {
@@ -285,4 +286,12 @@ div:has(>.messaggi) {
 
 .microfono:active {
     color: #029688;
+}
+
+
+/*************************************************
+CLASSI DINAMICHE 
+**************************************************/
+.chat-selezionata{
+    background-color: #e9ebeb;
 }
