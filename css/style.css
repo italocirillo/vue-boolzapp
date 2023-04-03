@@ -227,7 +227,7 @@ div:has(>.messaggi) {
     font-weight: 500;
     max-width: 80%;
     display: inline-block;
-    padding: 1.6em 10em 2em 1.6em;
+    padding: 1.2em 10em 1.2em 1.6em;
     border-radius: 15px;
 }
 
@@ -251,8 +251,8 @@ div:has(>.messaggi) {
 
 .orario-messaggio {
     position: relative;
-    top: 20px;
-    right: 40px;
+    top: 10px;
+    right: 35px;
     font-size: 0.5rem;
     color: #a7a6a4;
 }
