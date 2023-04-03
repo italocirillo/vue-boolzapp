@@ -171,8 +171,8 @@ createApp({
     }
   },
   methods: {
+    // Messaggio da inviare 
     inviaMessaggio(){
-        // Messaggio da inviare 
         nuovoOggettoMessaggio = {
             date: '10/01/2020 15:30:55',
             message: this.messaggioDaInviare,
@@ -180,8 +180,11 @@ createApp({
         }
         this.contatti[this.contattoSelezionato].messages.push({ ...nuovoOggettoMessaggio });
         this.messaggioDaInviare = "";
-
-        // Messaggio da ricevere
+        // Timeout prima di ricevere il messaggio
+        setTimeout(this.riceviMessaggio,1600);
+    },
+    // Messaggio da ricevere
+    riceviMessaggio(){
         nuovoOggettoMessaggioRicevuto = {
             date: '10/01/2020 15:30:55',
             message: 'ok',
