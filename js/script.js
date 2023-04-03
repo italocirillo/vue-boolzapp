@@ -167,6 +167,27 @@ createApp({
             }
         ],
         contattoSelezionato : 0,
+        messaggioDaInviare : "",
+    }
+  },
+  methods: {
+    inviaMessaggio(){
+        // Messaggio da inviare 
+        nuovoOggettoMessaggio = {
+            date: '10/01/2020 15:30:55',
+            message: this.messaggioDaInviare,
+            status: 'sent'
+        }
+        this.contatti[this.contattoSelezionato].messages.push({ ...nuovoOggettoMessaggio });
+        this.messaggioDaInviare = "";
+
+        // Messaggio da ricevere
+        nuovoOggettoMessaggioRicevuto = {
+            date: '10/01/2020 15:30:55',
+            message: 'ok',
+            status: 'received'
+        }
+        this.contatti[this.contattoSelezionato].messages.push({ ...nuovoOggettoMessaggioRicevuto });
     }
   }
 }).mount('#app')

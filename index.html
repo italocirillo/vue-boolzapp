@@ -101,7 +101,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                         <div class="sezione-messaggio-da-inviare">
                             <label for="messaggio-da-inviare"></label>
-                            <input type="text" name="messaggio" id="messaggio-da-inviare" placeholder="Scrivi un messaggio">
+                            <input type="text" name="messaggio" id="messaggio-da-inviare" placeholder="Scrivi un messaggio" v-model="messaggioDaInviare" @keyup.enter="inviaMessaggio">
                         </div>
                         <i class="fa-solid fa-microphone microfono"></i>
                     </footer>

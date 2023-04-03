@@ -228,8 +228,9 @@ div:has(>.messaggi) {
     font-weight: 500;
     max-width: 80%;
     display: inline-block;
-    padding: 1.2em 10em 1.2em 1.6em;
+    padding: 1.2em 5em 1.2em 1.6em;
     border-radius: 15px;
+    word-wrap: break-word;
 }
 
 .inviato {
