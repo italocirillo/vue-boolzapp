@@ -1,20 +1,30 @@
-/* RESET */
-*{
+/***************************************************
+    RESET 
+****************************************************/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
-img{
+
+img {
     max-width: 100%;
 }
-i{
+
+i {
     cursor: pointer;
 }
+
+i:hover {
+    transform: scale(1.2);
+}
+
 /* WRAPPER */
-.wrapper{
+.wrapper {
     background-image: linear-gradient(to bottom, #029688 20%, #d9dbd6 0%);
     width: 100%;
     min-width: 800px;
@@ -24,18 +34,21 @@ i{
     align-items: center;
 }
 
-/* TIPOGRAFIA */
-h1{
+/****************************************************
+    TIPOGRAFIA 
+*****************************************************/
+h1 {
     font-size: 1rem;
     font-weight: 400;
 }
-h2{
+
+h2 {
     font-size: 1rem;
     font-weight: 400;
 }
 
 /* FINESTRA APP */
-.finestra-app{
+.finestra-app {
     width: 80%;
     height: 90%;
     min-width: 800px;
@@ -43,25 +56,30 @@ h2{
     display: flex;
 }
 
-/* LISTA MESSAGGI */
-.sezione-lista-messaggi{
+/******************************************************
+    LISTA MESSAGGI 
+*******************************************************/
+.sezione-lista-messaggi {
     width: 40%;
     height: 100%;
     background-color: cadetblue;
     display: flex;
     flex-direction: column;
 }
-.header-section{
-    background-color:  #eaeaea;
+
+.header-section {
+    background-color: #eaeaea;
     padding: 0.5em 1em;
     display: flex;
     align-items: center;
 }
-.immagine-profilo{
+
+.immagine-profilo {
     max-width: 40px;
     border-radius: 50%;
 }
-.icone-header{
+
+.icone-header {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
@@ -70,26 +88,30 @@ h2{
 }
 
 /* Banner notifiche */
-.banner-notifiche{
+.banner-notifiche {
     background-color: #8edafc;
     display: flex;
     padding: 1em;
     gap: 1em;
 }
-.banner-notifiche h2{
+
+.banner-notifiche h2 {
     font-size: 1rem;
     font-weight: 400;
 }
-.link-notifiche{
+
+.link-notifiche {
     color: dimgray;
     font-size: 0.8rem;
 }
-.scritte-informative{
+
+.scritte-informative {
     color: #a7a6a4;
     font-size: 0.8rem;
     font-weight: 500;
 }
-.campanella{
+
+.campanella {
     color: #8edafc;
     background-color: white;
     height: 40px;
@@ -103,13 +125,14 @@ h2{
 }
 
 /* Barra Ricerca */
-.barra-di-ricerca{
+.barra-di-ricerca {
     background-color: #fafafa;
     padding: 0.3em;
     display: flex;
     align-items: center;
 }
-#ricerca-messaggi{
+
+#ricerca-messaggi {
     width: 100%;
     padding: 0.5em;
     border: 1px solid gainsboro;
@@ -118,7 +141,8 @@ h2{
     border-left: none;
     outline: none;
 }
-.icona-ricerca{
+
+.icona-ricerca {
     color: rgb(177, 176, 176);
     padding: 0.3em;
     border: 1px solid gainsboro;
@@ -129,25 +153,29 @@ h2{
 }
 
 /*Lista chat*/
-.lista-chat ul{
+.lista-chat ul {
     list-style: none;
 }
-.lista-chat{
+
+.lista-chat {
     overflow-y: auto;
     max-height: 80%;
 }
-.chat{
+
+.chat {
     display: flex;
     background-color: #fafafa;
     padding: 0.5em 0em;
     border-top: 0.5px solid gainsboro;
 }
-.foto-chat{
+
+.foto-chat {
     width: 15%;
     border-radius: 50%;
     margin: 0.2em 1em;
 }
-.orario-chat{
+
+.orario-chat {
     font-size: 0.6rem;
     font-weight: 900;
     color: lightgray;
@@ -155,37 +183,45 @@ h2{
     text-align: end;
     padding: 0em 1em;
 }
-.stato-chat{
+
+.stato-chat {
     color: rgb(152, 149, 149);
     font-size: 0.8rem;
     padding: 0.3em 0em;
 }
-.chat h2{
+
+.chat h2 {
     font-size: 1rem;
 }
 
-/* CHAT BOX */
-.chat-box{
+
+/****************************************************
+    CHAT BOX
+*****************************************************/
+.chat-box {
     width: 60%;
     height: 100%;
     background-image: url(../img/mine.jpg);
     display: flex;
     flex-direction: column;
 }
-.chat-box .header-section{
+
+.chat-box .header-section {
     border-left: 1px solid #b1b1b1;
 }
 
 /* Main invia messaggio */
-.storico-chat{
+.storico-chat {
     flex-grow: 1;
     padding: 2em 2em 0em 2em;
     overflow-y: auto;
 }
-div:has(>.messaggi){
+
+div:has(>.messaggi) {
     padding: 0.5em 0em;
 }
-.messaggi{
+
+.messaggi {
     color: rgb(81, 81, 81);
     font-size: 0.8rem;
     font-weight: 500;
@@ -194,46 +230,59 @@ div:has(>.messaggi){
     padding: 1.6em 10em 2em 1.6em;
     border-radius: 15px;
 }
-.inviato{
+
+.inviato {
     text-align: end;
 }
-.ricevuto{
+
+.ricevuto {
     text-align: start;
 }
-.inviato h6{
+
+.inviato h6 {
     background-color: #d5f9ba;
     position: relative;
 }
-.ricevuto h6{
+
+.ricevuto h6 {
     background-color: white;
     position: relative;
 }
-.orario-messaggio{
+
+.orario-messaggio {
     position: relative;
     top: 20px;
     right: 40px;
     font-size: 0.5rem;
     color: #a7a6a4;
 }
+
 /* Footer invia messaggio */
-.invia-messaggio{
+.invia-messaggio {
     background-color: #f3eee9;
     padding: 0.5em 1em;
     display: flex;
     align-items: center;
     gap: 1em;
 }
-.invia-messaggio i{
+
+.invia-messaggio i {
     color: gray;
 }
-.sezione-messaggio-da-inviare{
+
+.sezione-messaggio-da-inviare {
     flex-grow: 1;
 }
-#messaggio-da-inviare{
+
+#messaggio-da-inviare {
     width: 100%;
     border-radius: 5px;
     padding: 0.8em;
     border: 1px solid gainsboro;
     background-color: #fafafa;
     outline: none;
+}
+
+.microfono:active {
+    color: #029688;
 }
