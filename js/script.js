@@ -168,6 +168,8 @@ createApp({
         ],
         contattoSelezionato : 0,
         messaggioDaInviare : "",
+        ricercaUtente: "",
+        arrayContattiCercati: [],
     }
   },
   methods: {
@@ -196,9 +198,17 @@ createApp({
         }
         this.contatti[contattoCheDeveRispondere].messages.push({ ...nuovoOggettoMessaggioRicevuto });
     },
+    // Scrolla chat
     scrollaChat(){
         const storicoChat = document.querySelector(".storico-chat");
         storicoChat.scrollTop=storicoChat.scrollHeight;
     },
+    // Ricerca Contatti
+    eseguiRicerca(){
+        this.arrayContattiCercati = this.contatti.filter(
+            // Crea un array di contatti che iniziano con quello digitato nella barra di ricerca dell'utente
+            contatto => contatto.name.toLowerCase().startsWith(this.ricercaUtente.toLowerCase())
+        );
+    }
   }
 }).mount('#app')
