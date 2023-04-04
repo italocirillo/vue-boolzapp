@@ -185,6 +185,7 @@ createApp({
         setTimeout(()=>{
             this.riceviMessaggio(contattoCheDeveRispondere);
         },1000);
+        setTimeout(this.scrollaChat,1001);
     },
     // Messaggio da ricevere
     riceviMessaggio(contattoCheDeveRispondere){
@@ -194,6 +195,10 @@ createApp({
             status: 'received'
         }
         this.contatti[contattoCheDeveRispondere].messages.push({ ...nuovoOggettoMessaggioRicevuto });
-    }
+    },
+    scrollaChat(){
+        const storicoChat = document.querySelector(".storico-chat");
+        storicoChat.scrollTop=storicoChat.scrollHeight;
+    },
   }
 }).mount('#app')
