@@ -180,17 +180,20 @@ createApp({
         }
         this.contatti[this.contattoSelezionato].messages.push({ ...nuovoOggettoMessaggio });
         this.messaggioDaInviare = "";
+        const contattoCheDeveRispondere = this.contattoSelezionato;
         // Timeout prima di ricevere il messaggio
-        setTimeout(this.riceviMessaggio,1600);
+        setTimeout(()=>{
+            this.riceviMessaggio(contattoCheDeveRispondere);
+        },1000);
     },
     // Messaggio da ricevere
-    riceviMessaggio(){
+    riceviMessaggio(contattoCheDeveRispondere){
         nuovoOggettoMessaggioRicevuto = {
             date: '10/01/2020 15:30:55',
             message: 'ok',
             status: 'received'
         }
-        this.contatti[this.contattoSelezionato].messages.push({ ...nuovoOggettoMessaggioRicevuto });
+        this.contatti[contattoCheDeveRispondere].messages.push({ ...nuovoOggettoMessaggioRicevuto });
     }
   }
 }).mount('#app')
