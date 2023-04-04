@@ -60,10 +60,10 @@
                                 <img class="foto-chat" :src="'img/avatar'+contatto.avatar+'.jpg'" :alt="contatto.avatar">
                                 <div>
                                     <h2>{{ contatto.name }}</h2>
-                                    <p class="stato-chat">Ultimo messaggio inviato</p>
+                                    <p class="stato-chat">{{ contatto.messages[contatto.messages.length-1].message }}</p>
                                 </div>
                                 <span class="orario-chat">
-                                    12:00
+                                    {{ formattaData(contatto.messages[contatto.messages.length-1].date)}}
                                 </span>
                             </li>
                         </ul>
@@ -72,10 +72,10 @@
                                 <img class="foto-chat" :src="'img/avatar'+contatto.avatar+'.jpg'" :alt="contatto.avatar">
                                 <div>
                                     <h2>{{ contatto.name }}</h2>
-                                    <p class="stato-chat">Ultimo messaggio inviato</p>
+                                    <p class="stato-chat">{{ contatto.messages[contatto.messages.length-1].message }}</p>
                                 </div>
                                 <span class="orario-chat">
-                                    12:00
+                                    {{ formattaData(contatto.messages[contatto.messages.length-1].date)}}
                                 </span>
                             </li>
                         </ul>
@@ -89,7 +89,9 @@
                         <img class="immagine-profilo" :src="`img/avatar${contatti[contattoSelezionato].avatar}.jpg`" alt="foto-profilo-Michele">
                         <div>
                             <h2>{{ contatti[contattoSelezionato].name}}</h2>
-                            <p class="scritte-informative">Ultimo accesso oggi alle 12:00</p>
+                            <p class="scritte-informative">Ultimo accesso oggi alle {{ 
+                                formattaData(contatti[contattoSelezionato].messages[contatti[contattoSelezionato].messages.length-1].date) 
+                            }}</p>
                         </div>
                         <div class="icone-header">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -102,7 +104,7 @@
                         <div v-for="(messaggio,index) in contatti[contattoSelezionato].messages" :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto' ">
                             <h6 class="messaggi messaggi-inviati">{{ messaggio.message }}</h6>
                             <span class="orario-messaggio">
-                                15:30
+                                {{ formattaData(messaggio.date) }}
                             </span>
                         </div>
                     </main>
@@ -127,6 +129,8 @@
     </div>
     <!-- Fine Vue -->
     
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <!-- Script -->
     <script src="js/script.js"></script>
 </body>

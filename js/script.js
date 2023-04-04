@@ -1,8 +1,12 @@
 const { createApp }  = Vue;
+const dt = luxon.DateTime;
+// const oraAttuale = dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE);
+
 
 createApp({
   data() {
     return {
+        // ARRAY OGGETTI
         contatti: [
             {
                 name: 'Michele',
@@ -166,17 +170,21 @@ createApp({
                 ],
             }
         ],
+        // FINE ARRAY OGGETTI
         contattoSelezionato : 0,
         messaggioDaInviare : "",
         ricercaUtente: "",
         arrayContattiCercati: [],
+        oraAttuale: "",
     }
   },
   methods: {
+
     // Messaggio da inviare 
     inviaMessaggio(){
+        this.prelevaOraAttuale();
         nuovoOggettoMessaggio = {
-            date: '10/01/2020 15:30:55',
+            date: this.oraAttuale,
             message: this.messaggioDaInviare,
             status: 'sent'
         }
@@ -189,26 +197,52 @@ createApp({
         },1000);
         setTimeout(this.scrollaChat,1001);
     },
+
     // Messaggio da ricevere
     riceviMessaggio(contattoCheDeveRispondere){
+        this.prelevaOraAttuale();
         nuovoOggettoMessaggioRicevuto = {
-            date: '10/01/2020 15:30:55',
+            date: this.oraAttuale,
             message: 'ok',
             status: 'received'
         }
         this.contatti[contattoCheDeveRispondere].messages.push({ ...nuovoOggettoMessaggioRicevuto });
+        // Sposta in cima
+        this.contatti=this.spostaChat(this.contatti,this.contatti[contattoCheDeveRispondere]);
+        this.contattoSelezionato = 0;
     },
+
     // Scrolla chat
     scrollaChat(){
         const storicoChat = document.querySelector(".storico-chat");
         storicoChat.scrollTop=storicoChat.scrollHeight;
     },
+
     // Ricerca Contatti
     eseguiRicerca(){
         this.arrayContattiCercati = this.contatti.filter(
             // Crea un array di contatti che iniziano con quello digitato nella barra di ricerca dell'utente
             contatto => contatto.name.toLowerCase().startsWith(this.ricercaUtente.toLowerCase())
         );
+    },
+
+    //FormattaData
+    formattaData(stringaData){
+        const Data = dt.fromFormat(stringaData, "dd/MM/yyyy HH:mm:ss");
+        return Data.toLocaleString(dt.TIME_24_SIMPLE);
+    },
+
+    // Preleva ora dall'oggetto
+    prelevaOraAttuale(){
+        this.oraAttuale = dt.now().toFormat("dd/MM/yyyy HH:mm:ss");
+    },
+    
+    //Sposta chat
+    spostaChat(array,elementoDaSpostare){
+        const indice = array.indexOf(elementoDaSpostare);
+        array.splice(indice, 1); 
+        array.unshift(elementoDaSpostare);
+        return array;
     }
   }
 }).mount('#app')
