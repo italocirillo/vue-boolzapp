@@ -223,16 +223,28 @@ createApp({
 
         // Ricerca Contatti
         eseguiRicerca() {
+            // Crea un array di contatti che iniziano con quello digitato nella barra di ricerca dell'utente
             this.arrayContattiCercati = this.contatti.filter(
-                // Crea un array di contatti che iniziano con quello digitato nella barra di ricerca dell'utente
                 contatto => contatto.name.toLowerCase().startsWith(this.ricercaUtente.toLowerCase())
             );
+            // Rendo visibili solo i contatti ricercati
+            for (let i = 0; i < this.contatti.length; i++) {
+                if (this.arrayContattiCercati.includes(this.contatti[i])) {
+                    this.contatti[i].visible = true;
+                } else {
+                    this.contatti[i].visible = false;
+                }
+            }
         },
 
         //FormattaData
         formattaData(stringaData) {
-            const Data = dt.fromFormat(stringaData, "dd/MM/yyyy HH:mm:ss");
-            return Data.toLocaleString(dt.TIME_24_SIMPLE);
+            let data = dt.fromFormat(stringaData, "dd/MM/yyyy HH:mm:ss");
+            if (dt.now().toLocaleString(dt.DATE_SHORT) === data.toLocaleString(dt.DATE_SHORT)) {
+                return data.toFormat("HH:mm");
+            } else {
+                return data.toFormat("'il ' dd/MM/yyyy 'alle' HH:mm");
+            }
         },
 
         // Preleva ora dall'oggetto
@@ -254,7 +266,6 @@ createApp({
                 this.contatti[this.contattoSelezionato].messages.splice(indexDaRimuovere, 1);
             }
             this.messaggioAttivo = false;
-
         },
     },
 
