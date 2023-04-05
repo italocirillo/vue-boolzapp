@@ -218,43 +218,67 @@ h2 {
     overflow-y: auto;
 }
 
+/* Messaggio*/
 div:has(>.messaggi) {
     padding: 0.5em 0em;
+    display: flex;
 }
 
 .messaggi {
+    max-width: 80%;
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    padding: 0em 0em 0em 1.6em;
+    cursor: pointer;
+    position: relative;
+}
+
+.testo-messaggio {
+    display: block;
+    max-width: 80%;
+    padding: 1.5em 0em;
     color: rgb(81, 81, 81);
     font-size: 0.8rem;
     font-weight: 500;
-    max-width: 80%;
-    display: inline-block;
-    padding: 1.2em 5em 1.2em 1.6em;
-    border-radius: 15px;
     word-wrap: break-word;
 }
 
 .inviato {
-    text-align: end;
+    justify-content: flex-end;
 }
 
 .ricevuto {
-    text-align: start;
+    justify-content: flex-start;
 }
 
-.inviato h6 {
+.inviato .messaggi {
     background-color: #d5f9ba;
-    position: relative;
 }
 
-.ricevuto h6 {
+.ricevuto .messaggi {
     background-color: white;
-    position: relative;
+}
+
+.messaggio-laterale {
+    height: 100%;
+    min-height: 2.5em;
+    padding: 0.5em 0em;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-right: 1em;
+}
+
+.messaggio-laterale:has(.fa-chevron-down) {
+    justify-content: space-between;
 }
 
 .orario-messaggio {
-    position: relative;
-    top: 10px;
-    right: 35px;
+    flex-grow: 0;
     font-size: 0.5rem;
     color: #a7a6a4;
 }
@@ -293,6 +317,36 @@ div:has(>.messaggi) {
 /*************************************************
 CLASSI DINAMICHE 
 **************************************************/
-.chat-selezionata{
+.chat-selezionata {
     background-color: #e9ebeb;
+}
+
+/* Menu a tendina */
+.menu-a-tendina {
+    background-color: hsl(0, 0%, 100%);
+    padding-top: 1em;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+}
+
+.menu-a-tendina ul {
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.menu-a-tendina li {
+    border-bottom: 1px solid lightgray;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.menu-a-tendina li:hover {
+    background-color: #d9dbd6;
+}
+
+.freccia-menu {
+    font-size: 1rem;
+    color: #a7a6a4;
 }
