@@ -247,11 +247,15 @@ div:has(>.messaggi) {
 }
 
 .inviato {
+    display: flex;
     justify-content: flex-end;
+    padding: 0.5em 0em;
 }
 
 .ricevuto {
+    display: flex;
     justify-content: flex-start;
+    padding: 0.5em 0em;
 }
 
 .inviato .messaggi {
