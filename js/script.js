@@ -253,6 +253,8 @@ createApp({
             if (this.contatti[this.contattoSelezionato].messages.length > 1) {
                 this.contatti[this.contattoSelezionato].messages.splice(indexDaRimuovere, 1);
             }
+            this.messaggioAttivo = false;
+
         },
     },
 
