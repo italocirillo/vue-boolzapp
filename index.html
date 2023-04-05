@@ -64,7 +64,7 @@
                     <div class="lista-chat">
                         <ul v-if="ricercaUtente.length === 0" v-for="(contatto,index) in contatti">
                             <li class="chat" :class="index === contattoSelezionato ? 'chat-selezionata' : '' "
-                                @click="contattoSelezionato=index">
+                                @click="{contattoSelezionato=index;menuMessaggioAttivo=false;messaggioAttivo=false}">
                                 <img class="foto-chat" :src="'img/avatar'+contatto.avatar+'.jpg'"
                                     :alt="contatto.avatar">
                                 <div>
@@ -113,12 +113,13 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </header>
-                    
+
                     <!-- STORICO DELLE CHAT -->
                     <main class="storico-chat">
                         <div v-for="(messaggio,index) in contatti[contattoSelezionato].messages"
                             :class="messaggio.status === 'sent' ? 'inviato' : 'ricevuto' ">
-                            <div class="messaggi" @click="{messaggioAttivo=!messaggioAttivo;messaggioCliccato=index}">
+                            <div class="messaggi"
+                                @click="{messaggioAttivo=!messaggioAttivo;messaggioCliccato=index;menuMessaggioAttivo=false}">
                                 <h6 class="testo-messaggio">{{ messaggio.message }}</h6>
                                 <div class="messaggio-laterale">
                                     <div v-if="messaggioAttivo && messaggioCliccato === index"
