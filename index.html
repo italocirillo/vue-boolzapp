@@ -71,11 +71,12 @@
                                     :alt="contatto.avatar">
                                 <div>
                                     <h2>{{ contatto.name }}</h2>
-                                    <p class="stato-chat">{{
-                                        contatto.messages[contatto.messages.length-1].message.substring(0,50) }}
+                                    <p v-if="contatto.messages.length>0" class="stato-chat">{{
+                                        contatto.messages[contatto.messages.length-1].message.substring(0,50) 
+                                    }}
                                     </p>
                                 </div>
-                                <span class="orario-chat">
+                                <span v-if="contatto.messages.length>0" class="orario-chat">
                                     {{ formattaData(contatto.messages[contatto.messages.length-1].date)}}
                                 </span>
                             </li>
@@ -91,7 +92,7 @@
                             alt="foto-profilo-Michele">
                         <div>
                             <h2>{{ contatti[contattoSelezionato].name}}</h2>
-                            <p class="scritte-informative">
+                            <p v-if="contatti[contattoSelezionato].messages.length>0" class="scritte-informative">
                                 <span
                                     v-if="formattaData(contatti[contattoSelezionato].messages[contatti[contattoSelezionato].messages.length-1].date).length === 5">Oggi
                                     alle</span>
