@@ -75,6 +75,9 @@
                                         contatto.messages[contatto.messages.length-1].message.substring(0,50) 
                                     }}
                                     </p>
+                                    <p v-else class="stato-chat">
+                                        Nessun messaggio
+                                    </p>
                                 </div>
                                 <span v-if="contatto.messages.length>0" class="orario-chat">
                                     {{ formattaData(contatto.messages[contatto.messages.length-1].date)}}
